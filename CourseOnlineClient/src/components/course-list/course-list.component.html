@@ -1,0 +1,47 @@
+<div class="course-list" style="max-width: 400px; margin: auto;">
+    <h1>רשימת קורסים</h1>
+    <mat-list>
+        @for(course of courses;track course.id)
+        {
+        <mat-list-item>
+            <mat-card style="margin-bottom: 10px;">
+                <mat-card-header>
+                    <mat-card-title>{{ course.title }}</mat-card-title>
+                    <mat-card-subtitle>ID: {{ course.id }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ course.description }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="enroll(course.id)">הצטרף לקורס</button>
+                    <button mat-button color="warn" (click)="leave(course.id)">עזוב קורס</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list-item>
+        }
+    </mat-list>
+</div>
+
+<!-- <div class="course-list">
+    <h1>רשימת קורסים</h1>
+    <mat-list>
+        @for(course of courses;track course.id)
+        {
+        <mat-list-item>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{ course.title }}</mat-card-title>
+                    <mat-card-subtitle>ID: {{ course.id }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ course.description }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="enroll(course.id)">הצטרף לקורס</button>
+                    <button mat-button (click)="leave(course.id)">עזוב קורס</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list-item>
+        }
+    </mat-list>
+</div> -->

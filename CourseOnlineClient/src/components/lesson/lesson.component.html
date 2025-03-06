@@ -1,0 +1,10 @@
+<h2>Lessons for Course ID: {{ courseId }}</h2>
+<ul>
+    @for( lesson of lessons;track lesson.id)
+    {
+    <li>
+        {{ lesson.title }} - {{ lesson.description }}
+    </li>
+    }
+
+</ul>

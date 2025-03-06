@@ -1,0 +1,47 @@
+<div>
+    <h1>ניהול שיעורים</h1>
+    <button (click)="openAddLessonModal()">הוסף שיעור חדש</button>
+    <ul>
+        @for(lesson of lessons;track lesson.id)
+        {
+        <li>
+            {{ lesson.title }} - {{ lesson.content }}
+            <button (click)="openUpdateLessonModal(lesson)">ערוך</button>
+            <button (click)="deleteLesson(lesson.id)">מחק</button>
+        </li>
+        }
+    </ul>
+
+    @if(showAddLessonModal)
+    {
+    <div>
+        <form (ngSubmit)="addLesson()">
+            <label for="lesson-title">כותרת:</label>
+            <input type="text" id="lesson-title" [(ngModel)]="lessonUpdate.title" name="lessonTitle" required>
+
+            <label for="lesson">שיעור:</label>
+            <input type="number" id="lesson" [(ngModel)]="lessonUpdate.content" name="lesson"
+                required>
+
+            <button type="submit">שמור</button>
+            <button (click)="closeAddLessonModal()">סגור</button>
+        </form>
+    </div>
+    }
+    @if(showUpdateLessonModal)
+    {
+    <div>
+        <form (ngSubmit)="editLesson()">
+            <label for="lesson-title">כותרת:</label>
+            <input type="text" id="lesson-title" [(ngModel)]="lessonUpdate.title" name="lessonTitle" required>
+
+            <label for="lesson">שיעור:</label>
+            <input type="number" id="lesson" [(ngModel)]="lessonUpdate.content" name="lesson"
+                required>
+
+            <button type="submit">שמור</button>
+            <button (click)="closeUpdateLessonModal()">סגור</button>
+        </form>
+    </div>
+    }
+</div>

@@ -1,0 +1,49 @@
+<div>
+    <h1>ניהול קורסים</h1>
+    <button (click)="openAddCourseModal()">הוסף קורס חדש</button>
+    <ul>
+        @for(course of courses;track course.id)
+        {
+        <li>
+            <app-course [courseId]="course.id" [isMangement]="true"></app-course>
+            <button (click)="openUpdateCourseModal(course)">ערוך</button>
+            <button (click)="deleteCourse(course.id)">מחק</button>
+        </li>
+        }
+    </ul>
+
+
+
+    @if(showAddCourseModal)
+    {
+    <form (ngSubmit)="addCourse()" class="course-item">
+        <label for="course-title">Title:</label>
+        <input type="text" id="course-title" placeholder="Title of course" class="course-input"
+            [(ngModel)]="courseUpdate.title" name="courseTitle">
+
+        <label for="course-description">Description:</label>
+        <input type="text" id="course-description" placeholder="Description of course" class="course-input"
+            [(ngModel)]="courseUpdate.description" name="courseDescription">
+
+        <button type="submit" class="save-button">Save</button>
+        <button class="close-button" (click)="closeAddCourseModal()">Close</button>
+    </form>
+    }
+
+
+    @if(showUpdateCourseModal)
+    {
+    <form (ngSubmit)="editCourse()" class="course-item">
+        <label for="course-title">Title:</label>
+        <input type="text" id="course-title" placeholder="Title of course" class="course-input"
+            [(ngModel)]="courseUpdate.title" name="courseTitle">
+
+        <label for="course-description">Description:</label>
+        <input type="text" id="course-description" placeholder="Description of course" class="course-input"
+            [(ngModel)]="courseUpdate.description" name="courseDescription">
+
+        <button type="submit" class="save-button">Save</button>
+        <button class="close-button" (click)="closeUpdateCourseModal()">Close</button>
+    </form>
+    }
+</div>

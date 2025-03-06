@@ -1,0 +1,43 @@
+nav {
+    background-color: #3f51b5; /* צבע רקע של ה-menu */
+    padding: 10px 0;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center; /* מרכז את האיקון עם הטקסט */
+}
+
+.menu a mat-icon {
+    margin-right: 8px; /* רווח בין האיקון לטקסט */
+}
+
+.menu a:hover {
+    text-decoration: underline; /* קו תחתון כאשר העכבר מעל */
+}
+
+button {
+    background-color: #f44336; /* צבע רקע של כפתור מחיקת משתמש */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d32f2f; /* צבע רקע כאשר העכבר מעל */
+}

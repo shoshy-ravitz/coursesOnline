@@ -1,0 +1,38 @@
+<p>edit-user works!</p>
+<div>
+  <h2>עריכת פרטי משתמש</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">שם:</label>
+      <input id="name" formControlName="name">
+      <!-- userForm.controls['name'].invalid -->
+      <!-- @if(userForm.get('name').invalid && userForm.get('name').touched) -->
+      @if(userForm.controls['name'].invalid && userForm.controls['name'].touched)
+      {
+      שם הוא שדה חובה.
+      }
+
+    </div>
+
+    <div>
+      <label for="email">אימייל:</label>
+      <input id="email" formControlName="email">
+      @if(userForm.controls['email'].invalid && userForm.controls['email'].touched)
+      {
+      אימייל לא תקין.
+      }
+    </div>
+
+    <div>
+      <label for="password">סיסמה:</label>
+      <input type="password" id="password" formControlName="password">
+      @if(userForm.controls['password'].invalid && userForm.controls['password'].touched)
+      {
+      סיסמה היא שדה חובה.
+      }
+
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">שמור שינויים</button>
+  </form>
+</div>

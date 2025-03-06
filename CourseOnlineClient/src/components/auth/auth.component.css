@@ -1,0 +1,35 @@
+.background {
+    background: linear-gradient(to right, #6a5acd, #483d8b); /* גוני סגול כחול */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* חשוב למקם את ה-container */
+}
+
+.welcome-card {
+    background-color: rgba(255, 255, 255, 0.8); /* רקע כרטיס בהיר */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    position: relative; /* חשוב למקם את הכרטיס */
+    z-index: 1; /* נמוך יותר מהטופס */
+}
+
+.form-container {
+    position: absolute; /* מיקום מוחלט */
+    top: 50px; /* מרחק מהחלק העליון */
+    left: 50%; /* ממורכז */
+    transform: translateX(-50%); /* ממורכז */
+    z-index: 2; /* גבוה יותר מהכרטיסים */
+}
+
+mat-card {
+    width: 300px; /* רוחב כרטיסים */
+}
+
+button {
+    margin-top: 10px; /* רווח בין הכפתורים לטופס */
+}

@@ -1,0 +1,41 @@
+.course-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.course-input {
+    margin: 5px 0;
+    padding: 8px;
+    width: calc(100% - 16px);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.save-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #4CAF50; /* צבע ירוק */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #45a049; /* צבע כהה יותר בהעברה */
+}
+.close-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #f44336; /* צבע אדום */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #e53935; /* צבע כהה יותר בהעברה */
+}

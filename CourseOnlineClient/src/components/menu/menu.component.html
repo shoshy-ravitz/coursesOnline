@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <span>קורסים און ליין</span>
+</mat-toolbar>
+
+<nav>
+    <ul class="menu">
+        <li><a routerLink="/menu/home" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>home</mat-icon> בית</a></li>
+        <li><a routerLink="/edit-user" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>edit</mat-icon> עריכת פרטי משתמש</a></li>
+        <li><a routerLink="/menu/course" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>list</mat-icon> רשימת קורסים</a></li>
+        <li><a routerLink="/menu/course-management" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>settings</mat-icon> ניהול קורסים</a></li>
+        <li><button mat-button (click)="deleteUser()"><mat-icon>delete</mat-icon> מחיקת משתמש</button></li>
+    </ul>
+</nav>
+
+<router-outlet />
