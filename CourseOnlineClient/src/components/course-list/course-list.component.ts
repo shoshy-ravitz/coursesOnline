@@ -13,11 +13,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive,CourseComponent,
     // BrowserModule,
-    CommonModule ,
-    BrowserAnimationsModule,
-    MatListModule,
-    MatCardModule,
-    MatButtonModule],
+    // CommonModule ,
+    // BrowserAnimationsModule,
+     MatListModule,
+     MatCardModule,
+    // MatButtonModule
+  ],
   templateUrl: './course-list.component.html',
   styleUrl: './course-list.component.css'
 })

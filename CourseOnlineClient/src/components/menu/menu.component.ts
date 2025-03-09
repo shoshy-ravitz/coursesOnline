@@ -19,7 +19,7 @@ export class MenuComponent {
 
   constructor(private router: Router, private userService: UserService) {
 
-    // הנח שה-ID והטוקן נשמרים באיזשהו מקום, כמו ב-localStorage
+    // הנח שה-ID והטוקן נשמרים ב.איזשהו מקום, כמו ב-localStorage
     // this.userId = localStorage.getItem('userId') || ''; // או כל מקור אחר
     // this.token = localStorage.getItem('token') || ''; // או כל מקור אחר
     this.userId="1"

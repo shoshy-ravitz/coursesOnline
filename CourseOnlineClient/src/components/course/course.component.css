@@ -1,0 +1,28 @@
+.course-card {
+    margin: 10px;
+    transition: transform 0.2s;
+    background-color:  #1f00e7; /* צבע רקע כחול */
+    color: white; /* צבע טקסט לבן */
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* מעבר חלק */
+  }
+  
+  .course-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* צבע בסיסי */
+.course {
+    background-color: (72, 72, 246); /* צבע רקע כחול */
+    color: white; /* צבע טקסט לבן */
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* מעבר חלק */
+  }
+  
+  /* צבע כהה יותר בעת מעבר עכבר */
+  .course-card :hover {
+    background-color:  rgb(72, 72, 246);; /* צבע רקע כהה יותר */
+  }
+  

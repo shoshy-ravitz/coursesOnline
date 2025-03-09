@@ -25,7 +25,7 @@ module.exports = (db) => {
       if (err || !course) {
         console.log("err"+err);
         console.log("c:"+course);
-        return res.status(404).json({ message: 'Course not found 11' });
+        return res.status(404).json({ message: 'Course not found 111111' });
       }
       res.status(200).json(course);
     });

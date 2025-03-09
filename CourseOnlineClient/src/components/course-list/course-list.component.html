@@ -1,4 +1,4 @@
-<div class="course-list" style="max-width: 400px; margin: auto;">
+<!-- <div class="course-list" style="max-width: 400px; margin: auto;">
     <h1>רשימת קורסים</h1>
     <mat-list>
         @for(course of courses;track course.id)
@@ -20,8 +20,16 @@
         </mat-list-item>
         }
     </mat-list>
+</div> -->
+<div class="course-list">
+    <h1>רשימת קורסים</h1>
+    @for(course of courses;track course.id)
+    {
+    <app-course [courseId]="course.id" [isMangement]="false"></app-course>
+    <button mat-button (click)="enroll(course.id)">הצטרף לקורס</button>
+    <button mat-button (click)="leave(course.id)">עזוב קורס</button>
+    }
 </div>
-
 <!-- <div class="course-list">
     <h1>רשימת קורסים</h1>
     <mat-list>

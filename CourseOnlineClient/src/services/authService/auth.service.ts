@@ -29,20 +29,22 @@ export class AuthService {
         catchError(this.handleError)
       ).subscribe(r=>console.log(r));;
   }
-
-  loginAuth(authData: Partial<Auth>){
-     this.http.post<{ token: string, userId: string, role: string }>(`${this.apiUrl}/login`, authData)
+  loginAuth(authData: Partial<Auth>): Observable<any> {
+    return this.http.post<{ token: string, userId: string, role: string }>(`${this.apiUrl}/login`, authData)
       .pipe(
         tap(response => {
-          // שמירה של ה-Token, ה-userId וה-role ב-session storage
           sessionStorage.setItem('authToken', response.token);
           sessionStorage.setItem('userId', response.userId);
           sessionStorage.setItem('role', response.role);
         }),
-        catchError(this.handleError),
-      ).subscribe(r=>console.log(r));
-      ;
+        catchError(error => {
+          alert(error.error.message); // הצגת הודעת השגיאה
+          return throwError(() => new Error('Something went wrong.'));
+        }),
+      );
   }
+  
+
 
   // פונקציה לקבלת ה-Token
   getToken(): string | null {

@@ -8,6 +8,101 @@
     {
     <div class="form-container login-form">
         <mat-card>
+            <button class="close-button" (click)="open = ''">✖</button>
+            <h2>התחברות</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <mat-form-field appearance="fill">
+                    <mat-label>אימייל</mat-label>
+                    <input matInput type="email" formControlName="email" required>
+                    @if(loginForm.controls['email'].invalid && loginForm.controls['email'].touched)
+                    {
+                    <small class="error">אימייל לא תקין</small>
+                    }
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>סיסמה</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched)
+                    {
+                    <small class="error">סיסמה חייבת להיות לפחות 6 תווים</small>
+                    }
+
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">התחבר</button>
+            </form>
+        </mat-card>
+    </div>
+    }
+
+    @if(open == "register")
+    {
+    <div class="form-container register-form">
+        <mat-card>
+            <button class="close-button" (click)="open = ''">✖</button>
+            <h2>הרשמה</h2>
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                <mat-form-field appearance="fill">
+                    <mat-label>שם</mat-label>
+                    <input matInput type="text" formControlName="name" required>
+                    @if(registerForm.controls['name'].invalid && registerForm.controls['name'].touched)
+                    {
+                    <small class="error">>שם הוא שדה חובה</small>
+                    }
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>אימייל</mat-label>
+                    <input matInput type="email" formControlName="email" required>
+                    @if(registerForm.controls['email'].invalid && registerForm.controls['email'].touched)
+                    {
+                    <small class="error">אימייל לא תקין</small>
+                    }
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>סיסמה</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    @if(registerForm.controls['password'].invalid && registerForm.controls['password'].touched)
+                    {
+                    <small class="error">סיסמה חייבת להיות לפחות 6 תווים</small>
+                    }
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>תפקיד</mat-label>
+                    <mat-select formControlName="role" required>
+                        <mat-option value="student">סטודנט</mat-option>
+                        <mat-option value="teacher">מורה</mat-option>
+                        <mat-option value="admin">מנהל</mat-option>
+                    </mat-select>
+                    @if(registerForm.controls['role'].invalid && registerForm.controls['role'].touched)
+                    {
+                    <small class="error">תפקיד הוא שדה חובה</small>
+                    }
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" type="submit" [disabled]="registerForm.invalid">הרשם</button>
+            </form>
+        </mat-card>
+    </div>
+    }
+    <router-outlet></router-outlet>
+</div>
+
+<!-- <div class="background">
+    <mat-card class="welcome-card">
+        <h1>ברוך הבא לקורסים און ליין</h1>
+        <button mat-raised-button color="primary" (click)="open = 'login'">התחברות</button>
+        <button mat-raised-button color="accent" (click)="open = 'register'">הרשמה</button>
+    </mat-card>
+    @if(open=="login")
+    {
+    <div class="form-container login-form">
+        <mat-card>
+            <button class="close-button" (click)="open = '' ">✖</button> 
             <h2>התחברות</h2>
             <form (ngSubmit)="onLogin()">
                 <mat-form-field appearance="fill">
@@ -31,6 +126,7 @@
     {
     <div class="form-container register-form">
         <mat-card>
+            <button class="close-button" (click)="open = ''">✖</button> 
             <h2>הרשמה</h2>
             <form (ngSubmit)="onRegister()">
                 <mat-form-field appearance="fill">
@@ -65,7 +161,7 @@
 
     }
     <router-outlet />
-</div>
+</div> -->
 
 
 <!-- <div>

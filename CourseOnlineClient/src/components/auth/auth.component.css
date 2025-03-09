@@ -1,5 +1,5 @@
 .background {
-    background: linear-gradient(to right, #6a5acd, #483d8b); /* גוני סגול כחול */
+    background: linear-gradient(to right, #1f00e7, #483d8b); /* גוני סגול כחול */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
 
 .form-container {
     position: absolute; /* מיקום מוחלט */
-    top: 50px; /* מרחק מהחלק העליון */
+    top:250px; /* מרחק מהחלק העליון */
     left: 50%; /* ממורכז */
     transform: translateX(-50%); /* ממורכז */
     z-index: 2; /* גבוה יותר מהכרטיסים */
@@ -32,4 +32,14 @@ mat-card {
 
 button {
     margin-top: 10px; /* רווח בין הכפתורים לטופס */
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f44336; /* צבע אדום */
 }
