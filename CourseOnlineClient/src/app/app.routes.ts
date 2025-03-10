@@ -8,6 +8,7 @@ import { CourseComponent } from '../components/course/course.component';
 import { CourseManagementComponent } from '../components/course-management/course-management.component';
 import { LessonListComponent } from '../components/lesson-list/lesson-list.component';
 import { ManagementLessonComponent } from '../components/lesson-management/lesson-management.component';
+import { MyCoursesComponent } from '../components/my-courses/my-courses.component';
 
 export const routes: Routes = [
     { path: 'auth', component: AuthComponent },
@@ -15,6 +16,8 @@ export const routes: Routes = [
         path: 'menu', component: MenuComponent, children: [
             { path: 'home', component: HomeComponent },
             { path: 'course', component: CourseListComponent },
+            { path: 'my-courses', component: MyCoursesComponent },
+
             {
                 path: 'course/:id', component: CourseComponent, children: [
                     { path: 'lessons', component: LessonListComponent }, // נתיב לשיעורים

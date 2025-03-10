@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
 import { Auth } from '../../models/auth.model';
-import { log } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +44,6 @@ export class AuthService {
       );
   }
   
-
 
   // פונקציה לקבלת ה-Token
   getToken(): string | null {
