@@ -14,8 +14,8 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ManagementLessonComponent implements OnInit {
 
-  @Input() courseId!: number; // קלט לקבלת מזהה הקורס
-  lessons: Lesson[] = []; // מערך לאחסון השיעורים
+  @Input() courseId!: number; 
+  lessons: Lesson[] = []; 
   showAddLessonModal: boolean = false;
   showUpdateLessonModal: boolean = false;
   lessonUpdate: Lesson ={id:0,title: "",content: "",courseId:0}
@@ -27,7 +27,7 @@ export class ManagementLessonComponent implements OnInit {
      // קבלת קוד הקורס מה-route params
      this.route.params.subscribe(params => {
       this.courseId = params['courseId'];
-      this.loadLessons(); // טען את השיעורים לאחר קביעת courseId
+      this.loadLessons(); 
     });
   }
 
@@ -90,14 +90,12 @@ export class ManagementLessonComponent implements OnInit {
   }
 
   openUpdateLessonModal(lesson: Lesson): void {
-    this.lessonUpdate = { ...lesson }; // העתק את השיעור לעריכה
+    this.lessonUpdate = { ...lesson }; 
     this.showUpdateLessonModal = true;
   }
 
   closeUpdateLessonModal(): void {
     this.lessonUpdate ={id:0,title: "",content: "",courseId:0}
-
-
     this.showUpdateLessonModal = false;
   }
 }

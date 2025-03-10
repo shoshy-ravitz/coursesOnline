@@ -1,21 +1,3 @@
-<!-- @if(lessons.length > 0)
-{
-<h2>Lessons for Course ID: {{ courseId }}</h2>
-<ul>
-    @for(lesson of lessons;track lesson.id)
-    {
-    <li>
-        {{ lesson.title }} - {{ lesson.duration }} minutes
-    </li>
-    }
-
-</ul>
-}
-@else{
-<p>No lessons available for this course.</p>
-} -->
-
-
 @for(lesson of lessons;track lesson.id)
 {
 <li>
@@ -28,10 +10,3 @@
 
 
 
-<!-- @for(event of (events$ | async); track event.id)
-{
-{{event.id}} - {{event.title}} - {{event.start}} - {{event.end}}
-}
-@empty{
-<div>אנחנו טוענים בשבילך את הנתונים</div>
-} -->

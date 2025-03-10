@@ -12,8 +12,8 @@ import { LessonsService } from '../../services/lessonService/lesson.service';
 export class LessonComponent implements OnInit {
 
 
-  courseId!: number; // משתנה לאחסון מזהה הקורס
-  lessons: any[] = []; // מערך לאחסון השיעורים
+  courseId!: number; 
+  lessons: any[] = []; 
 
   constructor(
     private route: ActivatedRoute,
@@ -23,15 +23,15 @@ export class LessonComponent implements OnInit {
   ngOnInit(): void {
     // קבלת מזהה הקורס מהנתיב
     this.route.params.subscribe(params => {
-      this.courseId = +params['id']; // המרה למספר
-      this.loadLessons(); // קריאה לפונקציה לטעינת השיעורים
+      this.courseId = +params['id'];
+      this.loadLessons(); 
     });
   }
 
   loadLessons(): void {
     this.lessonsService.getLessons(this.courseId).subscribe(
       (lessons) => {
-        this.lessons = lessons; // שמירת השיעורים במשתנה
+        this.lessons = lessons; 
       },
       (error) => {
         console.error('Error fetching lessons:', error);

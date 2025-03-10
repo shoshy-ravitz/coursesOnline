@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { EditUserComponent } from '../components/edit-user/edit-user.component';
 import { MenuComponent } from '../components/menu/menu.component';
 import { AuthComponent } from '../components/auth/auth.component';
 import { HomeComponent } from '../components/home/home.component';
@@ -9,6 +8,7 @@ import { CourseManagementComponent } from '../components/course-management/cours
 import { LessonListComponent } from '../components/lesson-list/lesson-list.component';
 import { ManagementLessonComponent } from '../components/lesson-management/lesson-management.component';
 import { MyCoursesComponent } from '../components/my-courses/my-courses.component';
+import { authGuard } from '../guards/auth.guard';
 
 export const routes: Routes = [
     { path: 'auth', component: AuthComponent },
@@ -20,8 +20,7 @@ export const routes: Routes = [
 
             {
                 path: 'course/:id', component: CourseComponent, children: [
-                    { path: 'lessons', component: LessonListComponent }, // נתיב לשיעורים
-                    // { path: 'lessons/:lessonId', component: LessonComponent }, // נתיב לשיעור ספציפי
+                    { path: 'lessons', component: LessonListComponent,canActivate:[authGuard] }, 
                 ]
             },
             {
@@ -33,4 +32,3 @@ export const routes: Routes = [
     },
     { path: '', redirectTo: '/auth', pathMatch: 'full' }
 ];
-///////////////////////////////////////////////////

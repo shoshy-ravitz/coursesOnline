@@ -62,9 +62,6 @@ export class CourseManagementComponent implements OnInit{
     this.showAddCourseModal = false;
   }
   openUpdateCourseModal(course:Course) {
-    // this.courseUpdate.title=course.title
-    // this.courseUpdate.description=course.description
-    // this.courseUpdate.id=course.id
     this.courseUpdate={...course}
     this.showUpdateCourseModal = true;
   }
