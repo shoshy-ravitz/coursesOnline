@@ -1,8 +1,8 @@
 export interface Auth {
-  //  id?: string;
+    id?: string;
     name: string;
     email: string;
     password: string; 
-    role: 'student' | 'teacher' | 'admin'|''; 
+    role: 'student' | 'teacher' | 'admin'|""; 
   }
   

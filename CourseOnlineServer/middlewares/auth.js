@@ -18,6 +18,8 @@ module.exports = (db) => {
       req.userRole = decoded.role;
       next();
     } catch (err) {
+      console.log("invalid"+err);
+      
       res.status(401).json({ message: 'Invalid token2222222222' });
     }
   };

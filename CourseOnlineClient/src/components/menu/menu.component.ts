@@ -17,10 +17,14 @@ export class MenuComponent {
   }
 
   deleteUser() {
-    let userId=sessionStorage.getItem('userId')+"";
-    this.userService.deleteUser(userId).subscribe(response => {
+    let userId = sessionStorage.getItem('userId')||"";
+    console.log(userId);
+    
+    this.userService.deleteUser(userId).subscribe(() => {
+      console.log("delet in menu ");
+
       // נווט לדף הכניסה או דף אחר לאחר המחיקה
-      this.router.navigate(['/']);
+      this.router.navigate(['/auth']);
     })
-}
+  }
 }

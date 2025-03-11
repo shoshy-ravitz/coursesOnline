@@ -20,11 +20,11 @@ export const routes: Routes = [
 
             {
                 path: 'course/:id', component: CourseComponent, children: [
-                    { path: 'lessons', component: LessonListComponent,canActivate:[authGuard] }, 
+                    { path: 'lessons', component: LessonListComponent, }, 
                 ]
             },
             {
-                path: 'course-management', component: CourseManagementComponent, children: [
+                path: 'course-management', component: CourseManagementComponent,canActivate:[authGuard], children: [
                     { path: 'lesson-management/:courseId', component: ManagementLessonComponent }
                 ]
             },

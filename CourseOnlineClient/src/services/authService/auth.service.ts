@@ -21,6 +21,9 @@ export class AuthService {
           sessionStorage.setItem('authToken', response.token);
           sessionStorage.setItem('userId', response.userId);
 
+          const role = this.autheSubject.getValue().find(i => i.id == response.userId)?.role||""
+          sessionStorage.setItem('role',role);
+
           const currentUsers = this.autheSubject.value;
           this.autheSubject.next([...currentUsers, authData]);
         }),
@@ -36,15 +39,10 @@ export class AuthService {
           sessionStorage.setItem('role', response.role);
         }),
         catchError(error => {
-          alert(error.error.message); 
+          alert(error.error.message);
           return throwError(() => new Error('Something went wrong.'));
         }),
       );
-  }
-  logout(): void {
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
-    sessionStorage.removeItem('role');
   }
 
   private handleError(error: any) {

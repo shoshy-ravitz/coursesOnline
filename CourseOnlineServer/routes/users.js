@@ -41,6 +41,8 @@ const User = require('../models/User');
 
   // Delete user by ID
   router.delete('/:id', checkAuth, async (req, res) => {
+    console.log("delete");
+    
     const { id } = req.params;
     userModel.deleteById(id, (err) => {
       if (err) {

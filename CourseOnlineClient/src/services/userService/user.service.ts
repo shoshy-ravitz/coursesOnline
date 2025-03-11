@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   private getHeaders(): HttpHeaders {
-    const token = sessionStorage.getItem('authToken'); 
+    const token = sessionStorage.getItem('authToken');
     return new HttpHeaders({
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
@@ -36,14 +36,24 @@ export class UserService {
 
 
   deleteUser(id: string): Observable<any> {
+    console.log("delet i nservice ..");
+    
+    this.logout()
     return this.http.delete(`${this.apiUrl}/${id}`, { headers: this.getHeaders() })
-      .pipe(
-        catchError(this.handleError)
-      );
+
+      // .pipe(
+        
+      //   catchError(this.handleError)
+      // );
   }
 
   private handleError(error: any) {
     console.error('Error occurred:', error);
     return throwError(() => new Error('Something went wrong.'));
+  }
+  logout(): void {
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('role');
   }
 }
