@@ -30,6 +30,7 @@ export class AuthService {
         catchError(this.handleError)
       ).subscribe(r => console.log(r));;
   }
+  
   loginAuth(authData: Partial<Auth>): Observable<any> {
     return this.http.post<{ token: string, userId: string, role: string }>(`${this.apiUrl}/login`, authData)
       .pipe(
