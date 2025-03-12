@@ -1,45 +1,126 @@
 .background {
-    background: linear-gradient(to right, #1f00e7, #483d8b); /* גוני סגול כחול */
-    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative; /* חשוב למקם את ה-container */
+    height: 100vh; /* גובה מלא של המסך */
+    background-color: #f0f0f0; /* צבע רקע בהיר */
 }
 
 .welcome-card {
-    background-color: rgba(255, 255, 255, 0.8); /* רקע כרטיס בהיר */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    position: relative; /* חשוב למקם את הכרטיס */
-    z-index: 1; /* נמוך יותר מהטופס */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* מרכז את הטקסט */
 }
 
-.form-container {
-    position: absolute; /* מיקום מוחלט */
-    top:250px; /* מרחק מהחלק העליון */
-    left: 50%; /* ממורכז */
-    transform: translateX(-50%); /* ממורכז */
-    z-index: 2; /* גבוה יותר מהכרטיסים */
+.logo {
+    width: 150px; /* גודל הלוגו */
+    margin-bottom: 20px; /* רווח בין הלוגו לכותרת */
 }
 
-mat-card {
-    width: 300px; /* רוחב כרטיסים */
+h1 {
+    font-size: 24px; /* גודל כותרת */
+    margin-bottom: 20px; /* רווח בין הכותרת לכפתור */
 }
 
 button {
-    margin-top: 10px; /* רווח בין הכפתורים לטופס */
+    width: 100%; /* כפתורים ברוחב מלא */
+    margin: 10px 0; /* רווח בין הכפתורים */
 }
+
+.icon {
+    width: 20px; /* גודל האייקון */
+    height: 20px; /* גובה האייקון */
+    margin-right: 8px; /* רווח בין האייקון לטקסט */
+}
+/* .background {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+} */
+/* 
+.welcome-card {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+} */
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+mat-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
 .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    float: right;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
-    color: #f44336; /* צבע אדום */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+mat-error {
+    font-size: 12px;
+    color: red;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-dialog-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.mat-dialog-content form {
+    width: 100%;
+}
+
+.mat-dialog-content mat-form-field {
+    width: 100%;
+}
+
+.mat-dialog-content button {
+    margin-top: 20px;
 }

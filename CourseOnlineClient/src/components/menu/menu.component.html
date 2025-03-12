@@ -1,15 +1,13 @@
 <mat-toolbar color="primary">
-    <span>קורסים און ליין</span>
+    <div class="image-container">
+        <img src="assets/images/1.jpg" alt="Logo" class="header-image" />
+    </div>
+    <div class="links-container">
+       <a class="link-home" routerLink="/menu/home" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>home</mat-icon> Home</a>
+       <a class="link-login" routerLink="/edit-user" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>edit</mat-icon> Edit User Details</a>
+       <a class="link-courses"  routerLink="/menu/course" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>list</mat-icon> Course List</a>
+       <a class="link-manage-courses" routerLink="/menu/course-management" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>settings</mat-icon> Course Management</a>
+       <button mat-button class="delete-button" (click)="deleteUser()"><mat-icon>delete</mat-icon> Delete User</button>
+    </div>
 </mat-toolbar>
-
-<nav>
-    <ul class="menu">
-        <li><a routerLink="/menu/home" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>home</mat-icon> בית</a></li>
-        <li><a routerLink="/edit-user" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>edit</mat-icon> עריכת פרטי משתמש</a></li>
-        <li><a routerLink="/menu/course" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>list</mat-icon> רשימת קורסים</a></li>
-        <li><a routerLink="/menu/course-management" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>settings</mat-icon> ניהול קורסים</a></li>
-        <li><button mat-button (click)="deleteUser()"><mat-icon>delete</mat-icon> מחיקת משתמש</button></li>
-    </ul>
-</nav>
-
-<router-outlet />
+<router-outlet /> 

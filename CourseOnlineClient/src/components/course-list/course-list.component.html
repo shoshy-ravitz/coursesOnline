@@ -3,7 +3,5 @@
     @for(course of courses;track course.id)
     {
     <app-course [courseId]="course.id"></app-course>
-    <button mat-button (click)="enroll(course.id)">הצטרף לקורס</button>
-    <button mat-button (click)="leave(course.id)">עזוב קורס</button>
     }
 </div>

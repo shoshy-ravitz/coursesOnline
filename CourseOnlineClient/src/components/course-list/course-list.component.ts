@@ -32,13 +32,4 @@ export class CourseListComponent implements OnInit {
     });
   }
 
-  // הצטרף לקורס
-  enroll(id: number) {
-   this.courseService.enrollStudent(id)
-  }
-
-  // עזוב קורס
-  leave(id: number) {
-
-  }
 }

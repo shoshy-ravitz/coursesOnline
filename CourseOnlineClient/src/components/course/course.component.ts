@@ -3,12 +3,15 @@ import { CourseService } from '../../services/courseService/course.service';
 import { Router, RouterOutlet } from '@angular/router';
 import { Course } from '../../models/course.model';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [RouterOutlet, MatCardModule],
+  imports: [RouterOutlet, MatCardModule,CommonModule, MatButtonModule, MatCardModule, MatIconModule],
   templateUrl: './course.component.html',
   styleUrl: './course.component.css'
 })
@@ -44,4 +47,9 @@ export class CourseComponent implements OnInit {
         this.router.navigate(['/menu/course', this.courseId, 'lessons']);
     }
   }
+
+  // הצטרף לקורס
+  enroll() {
+    this.coursesService.enrollStudent(this.courseId)
+   }
 }

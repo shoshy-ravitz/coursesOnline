@@ -1,5 +1,97 @@
 <div class="background">
     <mat-card class="welcome-card">
+        <h1>Welcome to Online Courses</h1>
+        <button mat-raised-button  (click)="openLoginDialog()"> Login </button>
+        <button mat-raised-button  (click)="openRegisterDialog()"> Register </button>
+    </mat-card>
+    <router-outlet></router-outlet>
+</div>
+
+<ng-template #loginDialog>
+    <h2 mat-dialog-title>Login</h2>
+    <mat-dialog-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" required>
+                @if(loginForm.controls['email'].invalid && loginForm.controls['email'].touched)
+                {
+                <mat-error>
+                    Invalid email
+                </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" required>
+                @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched)
+                {
+                <mat-error>
+                    Password must be at least 6 characters
+                </mat-error>
+                }
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+        </form>
+    </mat-dialog-content>
+</ng-template>
+
+<ng-template #registerDialog>
+    <h2 mat-dialog-title>Register</h2>
+    <mat-dialog-content>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                @if(registerForm.controls['name'].invalid && registerForm.controls['name'].touched)
+                {
+                <mat-error>
+                    Name is required
+                </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" required>
+                @if(registerForm.controls['email'].invalid && registerForm.controls['email'].touched)
+                {
+                <mat-error>
+                    Invalid email
+                </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" required>
+                @if(registerForm.controls['password'].invalid && registerForm.controls['password'].touched)
+                {
+                <mat-error>
+                    Password must be at least 6 characters
+                </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Role</mat-label>
+                <mat-select formControlName="role" required>
+                    <mat-option value="student">Student</mat-option>
+                    <mat-option value="teacher">Teacher</mat-option>
+                    <mat-option value="admin">Admin</mat-option>
+                </mat-select>
+                @if(registerForm.controls['role'].invalid && registerForm.controls['role'].touched)
+                {
+                <mat-error>
+                    Role is required
+                </mat-error>
+                }
+            </mat-form-field>
+            <button mat-raised-button color="accent" type="submit" [disabled]="registerForm.invalid">Register</button>
+        </form>
+    </mat-dialog-content>
+</ng-template>
+
+<!-- 
+<div class="background">
+    <mat-card class="welcome-card">
         <h1>ברוך הבא לקורסים און ליין</h1>
         <button mat-raised-button color="primary" (click)="open = 'login'">התחברות</button>
         <button mat-raised-button color="accent" (click)="open = 'register'">הרשמה</button>
@@ -90,7 +182,7 @@
     </div>
     }
     <router-outlet></router-outlet>
-</div>
+</div> -->
 
 <!-- <div class="background">
     <mat-card class="welcome-card">
